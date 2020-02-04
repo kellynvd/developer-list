@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.main-container a {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 0
+}
+
 .main-container ul {
   list-style: none;
   display: grid;
@@ -41,5 +48,5 @@
   font-size: 32px;
   color: #999;
   font-weight: bold;
-  margin-top: 300px;
+  margin-top: 100px;
 }
