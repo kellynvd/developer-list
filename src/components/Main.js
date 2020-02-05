@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import api from '../services/api';
-import './Main.css';
 import Filter from './Filter'
 import List from './List'
 import logo from '../assets/logo.png';
+import '../assets/stylesheets/Main.css';
 
 
 export default function Main() {

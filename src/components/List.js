@@ -1,7 +1,6 @@
 import React from 'react';
 import api from '../services/api';
 import Member from './Member'
-import './List.css'
 
 const List = ({
   filteredMembers,

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import Moment from 'react-moment';
+import '../assets/stylesheets/Member.css'
 
 const Member = ({
   member,
