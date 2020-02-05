@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import api from '../services/api';
-import ListItem from './ListItem'
+import Member from './Member'
 import './List.css'
 
 const List = ({
@@ -24,12 +24,13 @@ const List = ({
       };
 
       return (
-        <ListItem
-          member={member}
-          currentMemberId={currentMemberId}
-          currentMemberData={currentMemberData}
-          onClick={onClick}
-        />
+        <li key={member.id} onClick={onClick}>
+          <Member
+            member={member}
+            currentMemberId={currentMemberId}
+            currentMemberData={currentMemberData}
+          />
+        </li>
       );
     })}
   </ul>
