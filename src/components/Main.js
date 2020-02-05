@@ -1,8 +1,8 @@
-import React, { useEffect, useState, Fragment } from 'react';
-import Moment from 'react-moment';
+import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 import './Main.css';
 import Filter from './Filter'
+import List from './List'
 import logo from '../assets/logo.png';
 
 
@@ -33,45 +33,14 @@ export default function Main() {
       />
 
       {filteredMembers.length > 0 ? (
-        <ul>
-          {filteredMembers.map(member => {
-            const onClick = async () => {
-              if (currentMemberId !== member.id) {
-                setCurrentMemberId(member.id)
-                const response = await api.get(`/users/${member.login}`)
-                setCurrentMemberData(response.data);
-              } else {
-                setCurrentMemberId(null)
-                setCurrentMemberData(null);
-              }};
-
-            return (
-              <li key={member.id} onClick={onClick}>
-                {member.id === currentMemberId ? (
-                  <div className="member-data-container">
-                    <div className="member-avatar-container"><img src={member.avatar_url} alt={member.name} /></div>
-                    <p className="member-name">{currentMemberData.name}</p>
-                    <p className="member-created-at">No GitHub desde <Moment format="DD/MM/YYYY">{currentMemberData.created_at}</Moment></p>
-                    <div className="member-info">
-                      <div className="member-info-item">
-                        <div className="member-info-title">{currentMemberData.public_repos}</div><div className="member-info-text">Repositórios</div>
-                        <div className="member-info-title">{currentMemberData.followers}</div><div className="member-info-text">Seguidores</div>
-                      </div>
-                    </div>
-                  </div>
-                  ) : (
-                  <Fragment>
-                    <img src={member.avatar_url} alt={member.name} />
-                    <footer>
-                      <strong>{member.login}</strong>
-                    </footer>
-                  </Fragment>
-                  )
-                }
-              </li>
-            );
-          })}
-        </ul>) : (
+        <List
+          filteredMembers={filteredMembers}
+          currentMemberId={currentMemberId}
+          setCurrentMemberId={setCurrentMemberId}
+          currentMemberData={currentMemberData}
+          setCurrentMemberData={setCurrentMemberData}
+        />
+        ) : (
         <div className="empty">Nenhum membro encontrado :(</div>
       )}
     </div>

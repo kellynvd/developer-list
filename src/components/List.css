@@ -1,0 +1,57 @@
+.member-data-container {
+  margin: auto;
+}
+
+.member-data-container p {
+  color: #999;
+  margin: auto;
+}
+
+.member-avatar-container {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  box-shadow: 0px 8px 30px -10px rgba(13,28,39,0.6);
+}
+
+.member-name {
+ font-weight: bold;
+ padding: 10px 0px 0px 0px;
+ text-align: center;
+}
+
+.member-created-at {
+  padding-bottom: 10px;
+  font-size: small;
+  font-style: italic;
+}
+
+.member.info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: auto;
+  min-width: 150px;
+}
+
+.member-info-item {
+  min-width: 150px;
+}
+
+.member-info-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  margin: auto;
+}
+
+.member-info-text {
+  font-weight: 500;
+  color: #999;
+  margin: auto;
+  padding-bottom: 5px;
+}
