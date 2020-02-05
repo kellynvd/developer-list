@@ -5,7 +5,6 @@
   align-items: center;
 }
 
-
 .filter-container input {
   margin-top: 20px;
   border: 1px solid #ddd;
@@ -15,4 +14,8 @@
   font-size: 16px;
   color: #666;
   text-align: center;
+}
+
+.filter-container input::placeholder {
+  color: #999;
 }
